@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+<title>Intuitive Dictate</title>
+<meta name="description" content="">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+
+<!-- Fonts -->
+<!-- Open Sans -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
+<!-- Icon Font - Font Awesome -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/style.css?v=1" rel="stylesheet" />
+<link href="css/style-iphone5.css?v=1" rel="stylesheet" />
+<link href="css/style-iphone6.css?v=1" rel="stylesheet" />
+<link href="css/style-iphone6plus.css?v=1" rel="stylesheet" />
+<link href="css/swipe/swipeTo.css" rel="stylesheet" />
+<link href="css/sweetalert2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- *** Favicons *** -->
+<!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
+<!--<link rel="icon" href="favicons/favicon_96x96.png">-->
+<!-- Specifying a Webpage Icon for Web Clip -->
+<!--<link rel="apple-touch-icon-precomposed" href="favicons/favicon_57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"  href="favicons/favicon_72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="favicons/favicon_114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"  href="favicons/favicon_144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180"  href="favicons/favicon_180x180.png">-->
+
+<!-- Basic JavaScript-->
+<!-- Modernizr -->
+<script src="external/modernizr/modernizr.custom.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/sweetalert2.js"></script> 
+<script src="js/url.js"></script> 
+<script src="js/functions/page1_function.js"></script> 
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]> 
+    	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>		
+    <![endif]-->
+
+<!--[if lte IE 9]>
+        <link href="css/ie9.css?v=1" rel="stylesheet" />
+    <![endif]-->
+</head>
+
+<body>
+<header>
+  <div class="isd_header_area_wrap">
+    <div class="isd_header_title">Dictate List</div>
+    <div id="header_icon_btn" class="isd_header_menu_btn"></div>
+  </div>
+</header>
+<div id="isd_header_menu_id" class="isd_header_menu">
+  <ul>
+    <li><a href="page2.html">Settings</a></li>
+    <li><a href="#">Sent Dictations</a></li>
+    <li id="dictate_logout"><a href="#" >Logout</a></li>
+  </ul>
+</div>
+<div class="wrapper">
+  <section class="container isd_innerpagecontainer">
+    <div class="inner-box isd_innerpage">
+      <div class="list" id="recordlist"> 
+      
+       <!-- All dictation Item wrap RECORD -->
+        <div id="isd_record_item" class="isd_recording_wrap">
+          <div class="isd_items_wrap">
+            <div class="isd_items_titleplay">
+              <div class="isd_items_titleplay_column1">
+                <div class="isd_items_title_wrapbox"> <a href="#">
+                  <ul>
+                    <li class="isd_items_title" id="newDictationName"> New Dictation </li>
+                    <li class="isd_items_name"></li>
+                    <li class="isd_items_title_letter_icon" style="display: none;"> </li>
+                  </ul>
+                  </a> </div>
+              </div>
+              <div class="isd_clear"></div>
+            </div>
+            <div class="isd_title_time isd_title_time_record" id="newDictationDate"><span id="newDictationDuration">00:00</span></div>
+          </div>
+          
+          <!-- end item -->
+          
+          <div class="isd_record_wrap_functions">
+            <div class="isd_record_box_orange"> 
+			
+			
+			<div class="isd_record_line"></div>
+					
+             <div id="microfone"></div>
+
+			
+			</div>
+            <!-- 
+            <div class="isd_recording_player">
+              <audio id="audio_3" src="mp3\juicy.mp3" preload="auto"></audio>
+            </div>
+             -->
+            <div class="isd_recording_control">
+              <ul>
+                <li>
+                  <button id="isd_sent" data-toggle="modal" data-target="#isd_modal_sent" class="isd_paper_sent"></button>
+                </li>
+                <li>
+                  <button id="isd_attach" data-toggle="modal" data-target="#isd_modal_attach" class="isd_clip"></button>
+                </li>
+                <li>
+                  <button class="isd_pencil" style="display: none;""></button>
+                </li>
+                <li>
+                  <button id="isd_delete" data-toggle="modal" data-target="#isd_modal_trash_delete" class="isd_trash" style="display: none;"></button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end Record Wrap  --> 
+          
+          <!-- end All dictation Item wrap  --> 
+          
+        </div>
+        <!-- end item_wrap  --> 
+        <!-- end All Recording --> 
+        
+  
+
+      </div>
+      <!-- end list  --> 
+      
+    </div>
+  </section>
+  <!-- end container --> 
+</div>
+
+
+<footer>
+<div class="isd_text_footer_cancel" style="display: none;">Cancel</div>
+  <div class="isd_orange_btn_footer">
+    <input type="button" id="isd_button_stop" class="isd_orange_btn_inputbtn_stop" onclick="microphone.start()" val="" />
+    <input type="button" id="isd_button_play" class="isd_orange_btn_inputbtn_play" onclick="microphone.stop()" val="" />
+  </div>
+                                                                                                    
+  <div class="isd_text_footer"  id= "playAudio" style="display: none;">Submit</div>
+</footer>
+
+
+<!-- Modal Recording Controls -->
+
+
+    <!-- Attachment Modal -->
+
+	
+<div class="modal fade isd_settings_modal" id="isd_modal_attach">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+<!--       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+<h4 class="modal-title"></h4> 
+      </div> -->
+      <div class="modal-body">
+         
+	   <div class="isd_modal_attach_buttons">
+		  <ul>
+		    <li style="width:40%"><button  data-dismiss="modal" class="isd_use_camera" onclick="cameraTakePicture();"></button>
+		       <p>Use Camera</p>
+			</li>
+			<li style="width:18%"><span>or</span></li>
+			<li style="width:42%"><button  data-dismiss="modal" class="isd_use_image" onclick="cameraGetPicture();"></button>
+		       <p>Pull attachment from gallery</p>
+			</li>
+	     </ul>
+	   </div>		 
+      </div>
+<!--       <div class="modal-footer">
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+    <!-- end  Attachment Modal -->
+
+	
+	<!-- Sent Modal -->
+
+<div class="modal fade isd_settings_modal" id="isd_modal_sent">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+<!--       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+<h4 class="modal-title"></h4> 
+      </div> -->
+      <div class="modal-body">
+		<div class="isd_modal_attach_options">
+		    <ul>
+			  <li>
+			    <button id="" class="isd_attach_mail_btn" data-dismiss="modal" data-toggle="modal" data-target="#isd_modal_sent_sending"></button>
+				<p>Mail</p>
+			  </li>		  
+			  <li>
+			  <button id="" class="isd_attach_more_btn"></button>
+			  <p>More</p>
+			  </li>
+			</ul>
+		</div>
+      </div>
+    <div class="modal-footer">
+	
+	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	
+      </div> 
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+ <div style="display:none;">
+<img src="" id="myImage" />
+                        </div>
+<div class="modal fade isd_settings_modal" id="isd_modal_sent_sending">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+<!--       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+<h4 class="modal-title"></h4> 
+      </div> -->
+      <div class="modal-body">
+         	<div class="isd_modal_sent_sending_text"> Sent </div>
+       </div>
+<!--       <div class="modal-footer">
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+	<!-- end Sent Modal -->
+	
+	<!--  Trash Modal -->
+	
+
+	<div class="modal fade isd_settings_modal" id="isd_modal_trash_delete">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+<!--       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+<h4 class="modal-title"></h4> 
+      </div> -->
+      <div class="modal-body">
+         	<div class="isd_modal_sent_trash_text"> Delete this Entry? </div>
+       </div>
+     <div class="modal-footer">
+	<button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+      </div> 
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+	
+	<!--  Trash Modal -->
+
+<!--END Modal Recording Controls -->
+
+                                                                      
+                                                                       
+
+
+<div class="animationload">
+  <div class="preloader"></div>
+</div>
+<!-- JavaScript--> 
+<!-- External--> 
+<!-- jQuery 1.10.1--> 
+<script src="js/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<!-- Bootstrap 3--> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/custom.js"></script> 
+<script src="js/audiojs/audio.min.js"></script> 
+<script src="js/swipe/swipeTo.min.js"></script> 
+<script src="js/visualizer/wavesurfer.min.js"></script> 
+<script src="js/visualizer/wavesurfer.timeline.min.js"></script> 
+<script src="js/visualizer/wavesurfer.microphone.min.js"></script> 
+<script src="js/sweetalert2.js"></script> 
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/functions/recording.js"></script>
+
+<script>
+$(document).ready(function() { 
+     preloader();
+ });
+</script>
+<script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+</script>
+ 
+ <script>
+ 
+var wavesurfer = WaveSurfer.create({ container: '#microfone', waveColor: '#ffffff' });
+var microphone = Object.create(WaveSurfer.Microphone);
+
+microphone.init({
+    wavesurfer: wavesurfer
+});
+
+ microphone.on('deviceReady', function(stream) {
+    console.log('Device ready!', stream);
+});
+ 
+ </script>
+<script>
+
+$(document).ready(function() { 
+
+	$("#isd_button_stop").click(function() {
+		newRecording();
+	   $("#isd_record_item").show();
+    });
+
+    $("#isd_button_play").click(function() {
+       stopRecord();
+	   //$("#isd_record_item").hide();
+    });
+
+		
+});
+</script> 
+<script>
+
+$(document).ready(function() { 
+
+	$("#header_icon_btn").click(function() {
+       $("#isd_header_menu_id").toggle( "slide" );
+    });
+
+	$("#isd_button_stop").click(function() {
+	   $("#isd_button_play").show();
+	   $("#isd_button_stop").hide();
+    });
+
+	$("#isd_button_play").click(function() {
+	   $("#isd_button_play").hide();
+	   $("#isd_button_stop").hide();
+	   
+		$('.isd_text_footer_cancel').show();
+		$('.isd_text_footer').show();
+    });
+		
+});
+</script> 
+<script>
+
+$(document).ready(function() { 
+
+$('body').on('click', '.isd_titleplay_play_btn', function() {
+    var $this = $(this);
+    
+    // starting audio
+    var audioID = "audio_" + $(this).attr('id');
+    
+    $this.toggleClass('active');
+    if($this.hasClass('active')){
+        $("#" + audioID).trigger('play');
+    } else {
+        $("#" + audioID).trigger('pause');
+    }
+});
+
+});
+</script>
+
+
+<script>
+
+$(document).ready(function() { 
+
+
+$('#waveform_play_2').click(function(){
+    var $this = $(this);
+    
+    // starting audio
+	var audioplayID = "playaudio_" + $(this).attr('id');
+    
+    $this.toggleClass('active');
+    if($this.hasClass('active')){
+		$("#" + audioplayID).trigger('play');
+    } else {
+		$("#" + audioplayID).trigger('pause');
+    }
+});
+
+});
+</script>
+
+
+
+
+<script>
+
+$(document).ready(function () {
+    $('.isd_dictation_option_wrap').hide();
+    $('.isd_open_dictation_option').click(function () {
+        $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().next().slideToggle(100);
+		$(this).parent().parent().parent().parent().parent().next().toggle();
+    });
+    $('.isd_dictation_option_wrap').slideUp(100);
+});
+
+</script>
+
+ 
+<script>
+
+$(document).ready(function () {
+    $('.isd_items_player_wrap').hide();
+    $('.isd_title_player_show').click(function () {
+        $(this).parent().parent().parent().parent().next().next().slideToggle(100);
+    });
+    $('.isd_items_player_wrap').slideUp(100);
+});
+
+</script> 
+<script>
+
+$(document).ready(function () {
+  
+  $(function() {
+	$('.item-swipe').swipeTo({
+		minSwipe: 70,
+		angle: 10,
+		wrapScroll: 'body',
+		binder: true,
+		swipeStart: function() {
+			console.log('start play');
+		},
+		swipeMove: function() {
+			console.log('move');
+		},
+		swipeEnd: function() {
+			console.log('end');
+		},
+	});	
+	deleteItem();
+	getIe();
+})
+
+
+
+var deleteItem = function() {
+	var deleteItemFnc = $('body').on('click tap', '.isd_trash', function(e) {
+		recordingID = $(this).attr('data-value');
+		e.preventDefault();
+		var that = $(this);
+		 swal({
+			  title: 'Confirm delete?',
+			  text: "Delete!",
+			  type: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: "Yes"
+			}).then(function() {
+				$.post(api_url+"/recording/remove", { recID: recordingID },
+				  function(res){
+				   if (res.success == "true" || res.success == true) {
+					   swal(res.message,'Delete','info');
+						that.parent().parent().parent().parent().parent().fadeOut('500');
+				   }
+				  }, "json");
+				
+				
+			})
+	})
+}
+  
+ 
+  
+  
+});
+
+</script>
+
+<script>
+$(document).ready(function(){
+    $(document).ajaxStart(function(){
+        $("#whs_loader").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+        $("#whs_loader").css("display", "none");
+    });
+    $("#buttonID").click(function(){
+        $(this).load("");
+    });
+});
+</script>
+
+
+<div id="whs_loader" >
+      <div class="loader">
+        <div class="loader-inner line-spin-fade-loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+</div>		
+
+</body>
+</html>
+
+

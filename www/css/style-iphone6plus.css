@@ -1,0 +1,95 @@
+/* iPhone 6plus: */
+
+@media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3) {
+
+
+.login_text_pg {
+    text-align: center;
+    color: #fff;
+    margin-top: 26%;
+    margin-bottom: 30px;
+    font-size: 19px;
+}
+
+
+.login .login__btn {
+    margin-top: 28px;
+    margin-bottom: 65px;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    outline: none !important;
+}
+
+
+.login_field {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.login__field {
+	padding: 9px 15px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 5px;
+}
+
+.btn--decorated {
+    position: relative;
+    z-index: 20;
+    padding: 12px 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+    -webkit-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
+    transition: all 300ms ease-in;
+    -webkit-box-shadow: 0 3px 0px #c18721;
+    -moz-box-shadow: 0 3px 0px #c18721;
+    box-shadow: 0 3px 0px #c18721;
+    font-size: 15px !important;
+    border-radius: 5px;
+}
+
+.inner-box {
+    height: 100%;
+    min-height: 663px;
+    width: 100%;
+    display: block;
+    padding: 0 25px 15px 25px;
+}
+
+.splashwrapper-login {
+	background-image: url("../images/isd_bg_iphone6plus.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+a.login_callback {
+    font-size: 12px;
+}
+
+/* -------- Page 1 */
+
+
+.isd_items_title_wrapbox ul li.isd_items_name {
+    max-width: 220px;
+}
+
+
+/* --- Sent Button */
+
+#isd_modal_sent {
+    margin: 135% 0 0 0 !important;
+}
+
+
+}
